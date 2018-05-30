@@ -16,7 +16,7 @@
   <target name="clean">
     <delete dir="${build.dir}" />
     <delete dir="${docs.dir}" />
-    <delete dir="${dist.dir}"
+    <delete dir="${dist.dir}" />
   </target>
 
   <!-- Creates the  build, docs and dist directory-->
