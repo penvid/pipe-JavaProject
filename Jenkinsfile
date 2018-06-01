@@ -19,6 +19,20 @@ pipeline{
              sayHello 'Awesome student'    
         }
       }
+
+     stage('Git Info'){
+       agent any
+
+       steps{
+         echo "My branch name: ${env.BRANCH_NAME}"
+         
+         script{
+             def myLib = new vidacademy.git.gitStuff();
+             echo "My commit: ${myLib.gitCommit("${env.WORKSPACE}/.git")} "
+         }
+      
+      }
+     } 
  
       stage('Unit Test'){
           agent{
