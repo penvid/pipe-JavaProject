@@ -109,6 +109,17 @@ pipeline{
        }
     }
 
+   post{
+     success{
+        emailext(
+             subject: "${env.JOB_NAME} [${env.BUILD_NUMBER}] promoted to master",
+             body: """<p>'${env.JOB_NAME} [${env.BUILD_NUMBER}]' promoted to master":</p>
+             <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+             to: "vidya_suresh@yahoo.com"
+        ) 
+     }
+   }
+
 
   } 
 
