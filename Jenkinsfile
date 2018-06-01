@@ -108,7 +108,7 @@ pipeline{
             sh "git push origin rectangle-${env.MAJOR_VERSION}.${env.BUILD_NUMBER}"
        }
     }
-
+}
    post{
      success{
         emailext(
@@ -119,8 +119,5 @@ pipeline{
         ) 
      }
    }
-
-
-  } 
 
 }
